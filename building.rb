@@ -16,11 +16,12 @@ class Building
   end
 
   def apartments_by_rent
-    @apartments.sort_by {  }
+    rent = @apartments.sort_by { |apartment| apartment.monthly_rent }
+    rent.reverse
   end
 
-  def find_apartments_by_bedroom_count
-    @apartments.find
+  def find_apartments_by_bedroom_count(number)
+
   end
 
   def total_sqft

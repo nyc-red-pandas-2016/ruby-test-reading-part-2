@@ -9,15 +9,11 @@ class Building
   end
 
   def total_room_count
-    total_room_count = 0
-    @apartments.each { |apartment| total_room_count += apartment.room_count }
-    total_room_count
+    @apartments.map { |apartment| apartment.room_count }.inject(:+)
   end
 
   def total_monthly_revenue
-    total_monthly_revenue = 0
-    @apartments.each { |apartment| total_monthly_revenue += apartment.monthly_rent }
-    total_monthly_revenue
+    @apartments.map { |apartment| apartment.monthly_rent }.inject(:+)
   end
 
   def apartments_by_rent
@@ -29,8 +25,6 @@ class Building
   end
 
   def total_sqft
-    total_sqft = 0
-    @apartments.each { |apartment| total_sqft += apartment.total_sqft }
-    total_sqft
+    @apartments.map { |apartment| apartment.total_sqft }.inject(:+)
   end
 end

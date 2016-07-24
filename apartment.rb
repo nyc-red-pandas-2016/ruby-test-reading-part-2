@@ -19,6 +19,6 @@ class Apartment
 	end
 
 	def bedroom_count
-		@rooms.find_all {|room| room == 'bedroom'}.length
+		@rooms.find_all {|room| room.name == 'bedroom'}.length
 	end
 end

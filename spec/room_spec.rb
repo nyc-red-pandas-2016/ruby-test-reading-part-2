@@ -1,4 +1,5 @@
 require_relative '../room.rb'
+require 'pry'
 
 describe Room do
 
@@ -20,7 +21,7 @@ describe Room do
     it "has sqft" do
       expect(first_room.sqft).to eq sqft
     end
-
+    # binding.pry
     it "has default value for name" do
       expect(second_room.name).to eq 'bedroom'
     end

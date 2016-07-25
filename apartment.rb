@@ -1,6 +1,6 @@
 class Apartment
 
-  attr_accessor :number, :rooms, :monthly_rent
+  attr_accessor :rooms, :monthly_rent
 
   def initialize(args={})
     @number         = args.fetch(:number, '')
@@ -21,7 +21,8 @@ class Apartment
   end
 
   def bedroom_count
-    return 0 if @rooms.each { |room| room.name != 'bedroom'}
+    # return 0 if @rooms.each { |room| room.name != 'bedroom'}
+    @rooms.select { |room| room.name == "bedroom" }.length
   end
 
 end
